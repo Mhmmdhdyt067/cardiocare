@@ -29,7 +29,7 @@
   </p>
 
   <p align="center">
-    <a href="#-demo-aplikasi--arsitektur">Demo App</a> •
+    <a href="https://cardiocare.indonesiaemas45.id/">Demo App</a> •
     <a href="#-latar-belakang--urgensi-sdgs-34">Latar Belakang</a> •
     <a href="#-dataset--fitur-klinis">Dataset</a> •
     <a href="#-evaluasi--perbandingan-6-model">Evaluasi Model</a> •
@@ -79,6 +79,8 @@ Aplikasi memisahkan layer antarmuka pengguna (*User Interface*) dan engine kompu
 * **Sumber Data:** *Heart Failure Prediction Dataset* (Kaggle Multi-Center: Cleveland, Hungarian, Switzerland, Long Beach VA, Statlog).
 * **Ukuran Sampel:** 918 baris data pasien dengan 12 atribut utama.
 * **Data Wrangling:** Imputasi anomali medis `Cholesterol = 0 mg/dl` menggunakan nilai **Median (237 mg/dl)**.
+  
+* https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data
 
 | Nama Fitur | Tipe Data Asli | Deskripsi Medis & Rentang Fisiologis |
 | --- | --- | --- |
@@ -99,29 +101,19 @@ Aplikasi memisahkan layer antarmuka pengguna (*User Interface*) dan engine kompu
 
 ## 📈 Evaluasi & Perbandingan 6 Model Machine Learning
 
-Model dievaluasi menggunakan **Holdout Testing Data 20% (184 pasien)** yang terstratifikasi.
+Model dievaluasi menggunakan data uji terstratifikasi. Berdasarkan pengujian, **Logistic Regression** memperoleh performa terbaik secara keseluruhan dengan **Akurasi 89.67%** dan **Recall 92.16%**.
 
 > **💡 Mengapa Recall (Sensitivitas) Adalah Gold Standard?**
 > Dalam medis klinis, **False Negative** (pasien sakit jantung yang salah terdiagnosa sehat) berakibat fatal. Oleh karena itu, metrik **Recall** diutamakan untuk memastikan sebanyak mungkin pasien berisiko terdeteksi oleh sistem.
 
 | Rank | Algoritma Machine Learning | Accuracy | Precision | Recall (Krusial) | F1-Score | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| 🥇 | **Random Forest Classifier** | **88.59%** | **87.27%** | **92.31%** | **89.72%** | **Model Terpilih** |
-| 🥈 | **Logistic Regression** | 85.87% | 85.19% | 89.42% | 87.25% | Benchmark |
-| 🥉 | **Support Vector Machine (SVM)** | 85.87% | 84.55% | 90.38% | 87.37% | Benchmark |
-| 4 | **Gaussian Naive Bayes** | 84.78% | 84.26% | 88.46% | 86.31% | Benchmark |
-| 5 | **K-Nearest Neighbors (KNN)** | 83.15% | 82.57% | 87.50% | 84.96% | Benchmark |
-| 6 | **Decision Tree (CART)** | 79.89% | 81.37% | 82.69% | 82.02% | Benchmark |
-
-```text
-Confusion Matrix - Random Forest (184 Data Uji):
-┌──────────────────────────┬──────────────────────────┐
-│ True Negative (TN): 67   │ False Positive (FP): 14  │ (Pasien Sehat)
-├──────────────────────────┼──────────────────────────┤
-│ False Negative (FN): 8   │ True Positive (TP): 96   │ (Pasien Sakit - RECALL 92.31%)
-└──────────────────────────┴──────────────────────────┘
-
-```
+| 🥇 | **Logistic Regression** | **89.67%** | **89.52%** | **92.16%** | **90.82%** | **Model Terpilih** |
+| 🥈 | **K-Nearest Neighbors (KNN)** | 88.59% | 89.32% | 90.20% | 89.76% | Benchmark |
+| 🥉 | **Gaussian Naive Bayes** | 87.50% | 90.72% | 86.27% | 88.44% | Benchmark |
+| 4 | **Random Forest Classifier** | 87.50% | 89.11% | 88.24% | 88.67% | Benchmark |
+| 5 | **Support Vector Machine (SVM)** | 85.33% | 85.05% | 89.22% | 87.08% | Benchmark |
+| 6 | **Decision Tree (CART)** | 77.72% | 79.05% | 81.37% | 80.19% | Benchmark |
 
 ---
 
@@ -162,7 +154,7 @@ cp .env.example .env
 php artisan key:generate
 
 # Atur URL Vercel/FastAPI API di .env
-# VERCEL_AI_API_URL="[http://127.0.0.1:8000/predict](http://127.0.0.1:800/predict)"
+# VERCEL_AI_API_URL="[http://127.0.0.1:8000/predict](http://127.0.0.1:8000/predict)"
 
 # Jalankan server Laravel
 php artisan serve
@@ -183,10 +175,12 @@ Model Machine Learning di lingkungan produksi tidak bersifat statis, melainkan d
 
 ---
 
-## 👨‍💻 Pengembang Project
+## 👥 Pengembang Project (Kelompok 3 - Kelas B)
 
-* **Nama:** Student Ilmu Komputer
-* **Spesialisasi:** Machine Learning Researcher & Full-Stack Web Engineer
-* **Tujuan Project:** Tugas Akhir / Portofolio Akademik AI & Web Integration
+Project ini disusun untuk memenuhi tugas KECIL pada mata kuliah Artificial Intelligence:
+
+* **Muhammad Hidayat** — *AI Engineer, Web Developer*
+* **Ni Made Santi** — *Data Researcher & Technical Writer*
+* **Israwati** — *Data Analyst & System Tester*
 
 ---

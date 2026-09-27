@@ -29,11 +29,11 @@
   </p>
 
   <p align="center">
-    <a href="[#-demo-aplikasi--arsitektur](https://cardiocare.indonesiaemas45.id/)">Demo App</a> •
+    <a href="https://cardiocare.indonesiaemas45.id/">Demo App</a> •
     <a href="#-latar-belakang--urgensi-sdgs-34">Latar Belakang</a> •
     <a href="#-dataset--fitur-klinis">Dataset</a> •
-    <a href="#-evaluasi--perbandingan-6-model">Evaluasi Model</a> •
-    <a href="#-panduan-instalasi--lokal">Cara Install</a>
+    <a href="#-evaluasi--perbandingan-6-model-machine-learning">Evaluasi Model</a> •
+    <a href="#-panduan-instalasi--pengujian-lokal">Cara Install</a>
   </p>
 
 </div>
